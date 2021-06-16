@@ -29,7 +29,10 @@ app.get('/api/v1/users', function (req, res) {
 	});
 });
 
-app.listen(3000, () => {
+// herokuで実行する場合は、herokuが指定するport
+// ローカルで実行する場合は、3000
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
 	console.log('I am running...');
-	console.log('http://localhost:3000');
+	// console.log('http://localhost:3000');
 });
